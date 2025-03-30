@@ -1,4 +1,4 @@
-# Quality of life visualizer
+# Vancouver CityScope
 
 ## Mission Statement
 
