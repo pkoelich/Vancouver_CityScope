@@ -69,6 +69,7 @@ Accessibility Index = (Area150m ​× 0.40) + (Area300m​ × 0.30) + (Area450m�
 + (Area>450m​ × 0.10)
 
 ##### A higher Accessibility Index indicates better public transportation accessibility, while a lower value signifies reduced access to transit services.
+
 #### All derived values from 2.1 - 2.3 were min-max normalized to ensure comparability
 
 ### 2.4 Quality of Life Index
