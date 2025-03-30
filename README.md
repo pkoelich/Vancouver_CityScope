@@ -87,6 +87,8 @@ Quality of Life Index = (Homeownership Rate × 0.182) +(Housing Cost Burden Inde
 
 ## 3. Workflows
 
+![Workflow](Images/qol_index_fix.jpg)
+
 ### 3.1 Data isolation 
 
 1. Extract data from Canadian census profile using ArcGIS Data Interoperability tool by isolating the rows that contain:
