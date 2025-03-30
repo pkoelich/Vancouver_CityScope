@@ -76,12 +76,52 @@ Homeownership Rate: 18.2%
 Accessibility Index: 9.7%
 Quality of Life Index = (Homeownership Rate × 0.182) +(Housing Cost Burden Index × 0.286) + (Accessibility Index × 0.097) +(Living Wage Index × 0.435)
 
-#####A lower QOLI value indicates poorer quality of life, characterized by higher housing cost burdens, lower wages, reduced homeownership, and limited transit access.
+##### A lower QOLI value indicates poorer quality of life, characterized by higher housing cost burdens, lower wages, reduced homeownership, and limited transit access.
 
 
-## Workflows
+## 3. Workflows
 
-## Data dictionary
+### 3.1 Data isolation 
+
+Extract data from Canadian census profile using ArcGIS Data Interoperability tool by isolating the rows that contain:
+the number of households by tenure owner and renter: CHARACTERISTIC_ID 1415 and 1416
+Number or people spending more and less than 30% of their incomes on shelter cost: CHARACTERISTIC_ID 1466 and 1467
+Total median household income: CHARACTERISTIC_ID 243
+
+The resulting csv file will have the isolated values for each CHARACTERISTIC_ID for all census tracts and dissemination areas.
+  
+The data is then joined to a polygon dataset clipped to the City of Vancouver extent, so that only the census tracts and dissemination areas in Vancouver are visible. Each DA or CT polygon now contains the information from the Census Profile csv and can be used for further data analysis.
+
+### 3.2 Homeownership rate:
+
+Each census tract or dissemination area has a value for the number of households by tenure - owner and renter in two separate fields. To calculate homeownership rate we have to create an empty field and populate the field with the Calculate Field tool, dividing the number of owners by the combined total of owners and renters.
+Find the average homeownership rate, found using explore statistics in ArcGIS Pro. Create an empty field, and assign all the values to the average rate.
+Configure a popup to compare the average homeownership rate to the one present in each census geography.
+Create another empty field
+Use explore statistics to find the minimum and maximum values for the field, then normalize each entry according to those values. This will be used for comparison in the MCDA
+Living wage index:
+Create an empty field.
+Calculate the field by dividing median household income by the estimated living wage.
+Create another empty field, and set the value to the estimated living wage, 37500.
+Configure the pop ups to compare the median household income with the estimated living wage for each feature.
+Create another empty field
+Use explore statistics to find the minimum and maximum values for the field, then normalize each entry according to those values. This will be used for comparison in the MCDA.
+
+### 3.3 Housing cost burden index:
+Each census tract contains data for the number of people who are spending more than and less than 30% of their median household income on shelter costs. Start by creating an empty field, label it correctly and assign it the correct data type.
+Use the field calculator to calculate the field according to this formula:
+A = number of households spending less than 30% of their income on shelter costs.
+B = number of households spending more than 30% of their income on shelter costs.
+Total = total number of households (A + B)
+
+Housing Cost Burden Index =[B Total − A Total+1] 2 
+Configure a pie chart to show the percentage spending more and less than 30% of their income on housing.
+Create another empty field
+Use explore statistics to find the minimum and maximum values for the field, then normalize each entry according to those values. This will be used for comparison in the MCDA.
+
+
+
+## 4. Data dictionary
 
 | Name    | Source |    link | 
 | -------- | ------- |  ------- |
@@ -90,9 +130,9 @@ Quality of Life Index = (Homeownership Rate × 0.182) +(Housing Cost Burden Inde
 | Census metropolitan areas (CMAs), tracted census agglomerations (CAs) and census tracts (CTs) 2021 | Statistics Canada    | [Link](https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/download-telecharger.cfm?Lang=E)     |
 | Census Profile by Census Tracts    | Statistics Canada    |  [Link](https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/download-telecharger.cfm?Lang=E)   |
 
-## References
+## 5. References
 
-## Video Sources
+## 6. Video Sources
 
 
 
