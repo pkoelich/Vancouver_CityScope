@@ -1,6 +1,11 @@
 # Vancouver CityScope
 
-## Mission Statement
+## Team
+Kyle Vu
+Noah Shibagaki-Ong
+Pierre Koelich
+
+## 1. Mission Statement
 
 In recent years, people around the world have had to face a global cost of living crisis, fuelled by factors such as general inflation, supply chain issues, and geopolitical instability. In 2024, Statistics Canada released a report stating that nearly half (45%) of Canadians reported that rising prices were greatly affecting their ability to meet their day-to-day expenses, 12% higher than reported two years prior in 2022 (33%). With increasing costs for housing, energy, groceries, and transportation, Canadians have needed to find ways to share expenses through bill splitting strategies such as taking public transportation, buying in bulk, and cohabiting with others.
 
@@ -12,12 +17,12 @@ Our project looks at spatial differences across the three categories of financia
 
 Our app, Vancouver CityScope, is an interactive visual information product containing a map layer with a quality of life score assessed via quality of life indicators such as income to living wage ratio, homeownership rate, housing cost burden index, and transit accessibility. Each of the layers that comprises the final product is also able to be viewed individually. 
 
-## Methodology
+## 2. Methodology
 
 To accomplish our goal of showing quality of life we first begin by generating the individual indices. These are primarily off of census data from Statistics Canada and a Vancouver roads network that we built. The exact steps are detailed in the workflow section, below is the explanation for the indices:
 
 
-### Homeownership rate
+### 2.1 Homeownership rate
 
 Homeownership rate is traditionally associated with a more stable financial situation, increased social, and civic engagement, and neighbourhood stability. We are therefore using it as a proxy measure for housing security. The census data from StatCan provides data on private households by tenure, separating between owner, renter, and dwelling provided by the local government, First Nation or Indian band (excluded from calculation). It is only a 25% dataset, so it can provide an estimate of the proportion of owners to renters in this area.
 
@@ -26,9 +31,9 @@ The base calculation is:
  Homeownership rate = Homeowners(Homeowners+Renters)
 
 
-### Financial Stress
+### 2.2 Financial Stress
 
-#### Living wage index
+#### 2.2.1 Living wage index
 
 Living Wage BC states that a living wage is the hourly amount someone needs to earn in order to cover basic expenses. These expenses include food, clothing, rental housing, transportation, childcare, and emergency savings. This is currently calculated around the most common family unit in BC, a two-parent family with two children. In 2021, the year the census data was collected, the living wage was calculated at $20.52/hour, which resulted in an annual income of $37,346, which was rounded up to $37,500 for the purposes of this analysis. 
 
@@ -41,7 +46,7 @@ Living Wage Index = Median Household Income37500
 Values below 1: Below living wage
 Values above 1: Above living wage
 
-#### Housing Cost Burden Index
+#### 2.2.2 Housing Cost Burden Index
 
 A commonly used measure adopted by Statistics Canada is that if shelter costs are more than 30% of income, then housing is considered unaffordable(5). Statistics Canada collects data of how many households spend more than 30% of their income on shelter. This is a 25% dataset, so we are able to show proportionally how many households are spending more than 30% of their income on housing per census geography.
 
@@ -54,15 +59,15 @@ Housing Cost Burden Index =[B Total − A Total+1] 2
 
 A value of 0 for this index means that none of the households in this census tract are cost-burdened by housing, and a value of 1 means that all of them are.
 
-### Accessibility Index
+### 2.3 Accessibility Index
 
 The Accessibility Index (AI) measures proximity to public transportation using a weighted sum. Being within an appropriate walking distance to a bus stop from your house typically suggests greater accessibility to public transportation. Higher values indicate better accessibility to public transportation.
 Accessibility Index = (Area150m ​× 0.40) + (Area300m​ × 0.30) + (Area450m​ × 0.20)
 + (Area>450m​ × 0.10)
 
+#### All derived values from 2.1 - 2.3 were min-max normalized to ensure comparability
 
-
-### Quality of Life Index
+### 2.4 Quality of Life Index
 The Quality of Life Index is a composite index created using Multi-Criteria Decision Analysis (MCDA) and the Analytic Hierarchy Process (AHP). It integrates the four indices to assess overall quality of life:
 Pairwise comparisons in AHP were used to determine the relative importance of each criterion:
 Living Wage Index: 43.5%
@@ -70,7 +75,8 @@ Housing Cost Burden Index: 28.6%
 Homeownership Rate: 18.2%
 Accessibility Index: 9.7%
 Quality of Life Index = (Homeownership Rate × 0.182) +(Housing Cost Burden Index × 0.286) + (Accessibility Index × 0.097) +(Living Wage Index × 0.435)
-A lower value indicates poorer quality of life, reflecting higher housing cost burdens, lower wages, reduced homeownership, and limited transit access.
+
+#####A lower QOLI value indicates poorer quality of life, characterized by higher housing cost burdens, lower wages, reduced homeownership, and limited transit access.
 
 
 ## Workflows
