@@ -143,7 +143,7 @@ A weighted sum approach was applied to prioritize proximity to transit stops, us
 
 ##### AI=(Area150m×0.40)+(Area300m×0.30)+(Area450m×0.20)+(Area>450m×0.10)
 
-#### 4.6 Quality of Life Index
+### 4.6 Quality of Life Index
 
 The Quality of Life Index (QOLI) was developed using four key indicators(calculated above):
 1.Homeownership Rate: Measures housing stability.
