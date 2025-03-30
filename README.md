@@ -19,7 +19,7 @@ Our project looks at spatial differences across the three categories of financia
 
 Our app, Vancouver CityScope, is an interactive visual information product containing a map layer with a quality of life score assessed via quality of life indicators such as income to living wage ratio, homeownership rate, housing cost burden index, and transit accessibility. Each of the layers that comprises the final product is also able to be viewed individually. 
 
-## 2.Statement of Characteristics
+## 2. Statement of Characteristics
 
 
 
