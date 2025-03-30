@@ -2,8 +2,11 @@
 
 ## Team
 Kyle Vu
+
 Noah Shibagaki-Ong
+
 Pierre Koelich
+
 
 ## 1. Mission Statement
 
@@ -65,9 +68,11 @@ The Accessibility Index (AI) measures proximity to public transportation using a
 Accessibility Index = (Area150m ​× 0.40) + (Area300m​ × 0.30) + (Area450m​ × 0.20)
 + (Area>450m​ × 0.10)
 
+##### A higher Accessibility Index indicates better public transportation accessibility, while a lower value signifies reduced access to transit services.
 #### All derived values from 2.1 - 2.3 were min-max normalized to ensure comparability
 
 ### 2.4 Quality of Life Index
+
 The Quality of Life Index is a composite index created using Multi-Criteria Decision Analysis (MCDA) and the Analytic Hierarchy Process (AHP). It integrates the four indices to assess overall quality of life:
 Pairwise comparisons in AHP were used to determine the relative importance of each criterion:
 Living Wage Index: 43.5%
@@ -83,45 +88,90 @@ Quality of Life Index = (Homeownership Rate × 0.182) +(Housing Cost Burden Inde
 
 ### 3.1 Data isolation 
 
-Extract data from Canadian census profile using ArcGIS Data Interoperability tool by isolating the rows that contain:
+1. Extract data from Canadian census profile using ArcGIS Data Interoperability tool by isolating the rows that contain:
 the number of households by tenure owner and renter: CHARACTERISTIC_ID 1415 and 1416
 Number or people spending more and less than 30% of their incomes on shelter cost: CHARACTERISTIC_ID 1466 and 1467
 Total median household income: CHARACTERISTIC_ID 243
 
-The resulting csv file will have the isolated values for each CHARACTERISTIC_ID for all census tracts and dissemination areas.
+1. The resulting csv file will have the isolated values for each CHARACTERISTIC_ID for all census tracts and dissemination areas.
   
-The data is then joined to a polygon dataset clipped to the City of Vancouver extent, so that only the census tracts and dissemination areas in Vancouver are visible. Each DA or CT polygon now contains the information from the Census Profile csv and can be used for further data analysis.
+1. The data is then joined to a polygon dataset clipped to the City of Vancouver extent, so that only the census tracts and dissemination areas in Vancouver are visible. Each DA or CT polygon now contains the information from the Census Profile csv and can be used for further data analysis.
 
 ### 3.2 Homeownership rate:
 
-Each census tract or dissemination area has a value for the number of households by tenure - owner and renter in two separate fields. To calculate homeownership rate we have to create an empty field and populate the field with the Calculate Field tool, dividing the number of owners by the combined total of owners and renters.
-Find the average homeownership rate, found using explore statistics in ArcGIS Pro. Create an empty field, and assign all the values to the average rate.
-Configure a popup to compare the average homeownership rate to the one present in each census geography.
-Create another empty field
-Use explore statistics to find the minimum and maximum values for the field, then normalize each entry according to those values. This will be used for comparison in the MCDA
-Living wage index:
-Create an empty field.
-Calculate the field by dividing median household income by the estimated living wage.
-Create another empty field, and set the value to the estimated living wage, 37500.
-Configure the pop ups to compare the median household income with the estimated living wage for each feature.
-Create another empty field
-Use explore statistics to find the minimum and maximum values for the field, then normalize each entry according to those values. This will be used for comparison in the MCDA.
+1. Each census tract or dissemination area has a value for the number of households by tenure - owner and renter in two separate fields. To calculate homeownership rate we have to create an empty field and populate the field with the Calculate Field tool, dividing the number of owners by the combined total of owners and renters.
+1. Find the average homeownership rate, found using explore statistics in ArcGIS Pro. Create an empty field, and assign all the values to the average rate.
+1. Configure a popup to compare the average homeownership rate to the one present in each census geography.
+1. Create another empty field
+1. Use explore statistics to find the minimum and maximum values for the field, then normalize each entry according to those values. This will be used for comparison in the MCDA
+### 3.3 Living wage index:
+1. Create an empty field.
+1. Calculate the field by dividing median household income by the estimated living wage.
+1. Create another empty field, and set the value to the estimated living wage, 37500.
+1. Configure the pop ups to compare the median household income with the estimated living wage for each feature.
+1. Create another empty field
+1. Use explore statistics to find the minimum and maximum values for the field, then normalize each entry according to those values. This will be used for comparison in the MCDA.
 
-### 3.3 Housing cost burden index:
-Each census tract contains data for the number of people who are spending more than and less than 30% of their median household income on shelter costs. Start by creating an empty field, label it correctly and assign it the correct data type.
-Use the field calculator to calculate the field according to this formula:
-A = number of households spending less than 30% of their income on shelter costs.
-B = number of households spending more than 30% of their income on shelter costs.
-Total = total number of households (A + B)
+### 3.4 Housing cost burden index:
+1. Each census tract contains data for the number of people who are spending more than and less than 30% of their median household income on shelter costs. Start by creating an empty field, label it correctly and assign it the correct data type.
+1. Use the field calculator to calculate the field according to the formula detailed in section 2.2.2
+1. Configure a pie chart to show the percentage spending more and less than 30% of their income on housing.
+1. Create another empty field
+1. Use explore statistics to find the minimum and maximum values for the field, then normalize each entry according to those values. This will be used for comparison in the MCDA.
 
-Housing Cost Burden Index =[B Total − A Total+1] 2 
-Configure a pie chart to show the percentage spending more and less than 30% of their income on housing.
-Create another empty field
-Use explore statistics to find the minimum and maximum values for the field, then normalize each entry according to those values. This will be used for comparison in the MCDA.
+### 3.5 Accessibility Index
+#### 3.5.1 Service Area Calculation
+Using a network dataset, service areas were created around public transportation stops at four distance thresholds:
+1. 150m (high accessibility)
+2. 300m (moderate accesibility)
+3. 450m ( low accessibility)
+4. Greater than 450m (very low accessibility)
+
+The total land area covered by each service area within each census tract was calculated.
+
+#### 3.5.2 Accessibility Index Calculation
+
+For each census tract, the proportion of land covered by each service area was computed:
+Proportion=Service Area within Census TractTotal Census Tract Area\text{Proportion} = \frac{\text{Service Area within Census Tract}}{\text{Total Census Tract Area}}
+A weighted sum approach was applied to prioritize proximity to transit stops, using the following weights:
+
+##### AI=(Area150m×0.40)+(Area300m×0.30)+(Area450m×0.20)+(Area>450m×0.10)
+
+#### 3.6 Quality of Life Index
+
+The Quality of Life Index (QOLI) was developed using four key indicators(calculated above):
+1.Homeownership Rate: Measures housing stability.
+1.Housing Cost Burden Index: Percentage of households spending more than 30% of income on housing.
+1. Accessibility Index: Proximity to public transit.
+1. Living Wage Index: Ratio of median household income to the living wage ($37,500 per year).
+
+All indicators were min-max normalized to ensure comparability:
+
+Pairwise comparisons were conducted to establish priority weights for each criterion using the Analytic Hierarchy Process (AHP). The resulting weights were:
+#### Living Wage Index: 43.5%
+#### Housing Cost Burden Index: 28.6%
+#### Homeownership Rate: 18.2%
+#### Accessibility Index: 9.7%
+
+The final QOLI score for each census tract was calculated as:
+#### QOLI=(Homeownership Rate × 0.182)+(Housing Cost Burden Index × 0.286)+(Accessibility Index × 0.097)+(Living Wage Index × 0.435)
+
+## 4. Limitations
+
+### Temporal resolution
+
+A major limitation is the currency of the census dataset. This data comes from the 2021 census, the data can be considered behind the times. The issues around financial instability in the country were only emerging when this census data was collected. This can be shown with the BC living wage going from $20.52/hour(3) to $27.05/hour (4).  Recently the true magnitude of the problem has revealed itself, and our census data lags behind, and therefore the picture that our app paints.
+
+### Weights
+
+The weights assigned to each layer were derived from pairwise comparisons using the Analytic Hierarchy Process (AHP). This method, while widely used, inherently involves subjective judgments, which may not perfectly reflect real-world priorities. Consequently, the final results are influenced by these subjective weight assignments, a limitation common to multi-criteria decision analyses (MCDA). While unavoidable in many MCDA applications, it's important to acknowledge that variations in these weights could lead to differing outcomes. 
+
+### Problem Structuring
+
+Our Quality of Life index incorporated four key factors: accessibility, living wage index, housing cost burden index, and homeownership rate. However, it's important to acknowledge that quality of life is a multifaceted concept. Statistics Canada's Quality of Life Hub, for instance, identifies 84 distinct factors, including crucial aspects like environmental quality, social connection, and health. Due to time and data limitations, our analysis represents only a subset of these factors. Consequently, while the app provides valuable insights, it may not fully capture the nuanced reality of quality of life in each location. Users should interpret the results with this limitation in mind, understanding that other significant factors could influence their overall assessment.
 
 
-
-## 4. Data dictionary
+## 5. Data dictionary
 
 | Name    | Source |    link | 
 | -------- | ------- |  ------- |
@@ -129,10 +179,15 @@ Use explore statistics to find the minimum and maximum values for the field, the
 | Dissemination area digital boundary 2021 | Statistics Canada | [Link](https://www150.statcan.gc.ca/n1/en/catalogue/92-169-X) |
 | Census metropolitan areas (CMAs), tracted census agglomerations (CAs) and census tracts (CTs) 2021 | Statistics Canada    | [Link](https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/download-telecharger.cfm?Lang=E)     |
 | Census Profile by Census Tracts    | Statistics Canada    |  [Link](https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/details/download-telecharger.cfm?Lang=E)   |
+| City of Vancouver Building Footprint 2015 | City of Vancouver | [Link](https://opendata.vancouver.ca/explore/dataset/building-footprints-2015/information/) |
+| Public Streets | City of Vancouver | [Link](https://opendata.vancouver.ca/explore/dataset/public-streets/information/) |
+| Lanes | City of Vancouver | [Link](https://opendata.vancouver.ca/explore/dataset/lanes/information/) |
 
-## 5. References
+## 6. References
 
-## 6. Video Sources
+## 7. Video Sources
+
+Stock footage: 
 
 
 
