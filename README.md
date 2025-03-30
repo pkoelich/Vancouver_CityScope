@@ -1,8 +1,8 @@
-# ECCE_2025
+# Quality of life visualizer
 
 
 
-# Data dictionary
+## Data dictionary
 
 | Name    | Source |    url | 
 | -------- | ------- |  ------- |
