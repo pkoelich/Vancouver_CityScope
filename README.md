@@ -22,9 +22,9 @@ Our app, Vancouver CityScope, is an interactive visual information product conta
 
 ## App Characteristics
 
-Vancouver CityScope is an interactive Quality of Life (QOL) visualization tool, that allows the user to quickly view several aspects of QoL in the City of Vancouver. This starts with a composite QOL Index, which is derived via a multi-criteria decision analysis of indices that compare transit accessibility, financial stress, and homeownership. Each of the separate indices that comprise the QoL index can also be viewed individually, both at the census tract and dissemination area level. 
+Vancouver CityScope is an interactive Quality of Life (QoL) visualization tool, designed to provide a rapid overview of key QoL aspects within Vancouver. It features a combined QoL index, calculated through multi-criteria decision analysis of transit accessibility, financial stress, and homeownership indices. Users can explore both the composite QoL and individual indices at census tract and dissemination area levels, offering granular insights.
 
-Vancouver CityScope provides an interactive, visual representation of key indicators, helping us understand spatial differences in financial stress, housing stability, and access to sustainable transportation. There is a great deal of information available all in one app, and on top of the combined index, the user is able to identify patterns individually.
+The app delivers an interactive, visual representation of spatial differences in financial stress, housing stability, and sustainable transportation access. This comprehensive information display allows users to identify patterns and understand the individual contributions of each indicator, alongside the overall QoL assessment, all within a single application.
 
 ## Methodology
 
