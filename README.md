@@ -93,7 +93,7 @@ The Accessibility Index (AI) measures proximity to public transportation using a
 - 450m (Low Accessibility) - 20%
 - Greater than 450m (Very Low Accessibility) - 10%
 
-##### A higher Accessibility Index indicates better public transportation accessibility, while a lower value signifies reduced access to transit services.
+The resulting service area was unioned to census geography data (census tract and dissemination area). The proportion of each service area distance within each census tract or dissemination area was calculated, and then a weighted linear combination of this proportion multiplied by the respective weights was performed to generate our Accessibility Index. The same process was applied for the City of Vancouver's Building Footprints from 2015, with the only difference being that the proportion of each service area distance within each building was calculated. **A higher Accessibility Index indicates better public transportation accessibility, while a lower value signifies reduced access to transit services.**
 
 #### All derived values from 2.1 - 2.3 were min-max normalized to ensure comparability
 
