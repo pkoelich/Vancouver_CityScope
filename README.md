@@ -103,8 +103,6 @@ In order to create a composite index representing quality of life, all of our ab
 
 ## Workflows
 
-![Workflow](Images/qol_index_fix.jpg)
-
 ### **Data isolation** 
 
 1. Extract data from Canadian census profile using ArcGIS Data Interoperability tool by isolating the rows that contain:
