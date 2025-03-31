@@ -87,11 +87,11 @@ A value of 0 for this index means that none of the households in this census tra
 
 ### **Accessibility Index**
 
-The Accessibility Index (AI) measures proximity to public transportation using a weighted linear combination. Being within an appropriate walking distance to a bus stop from your house typically suggests greater accessibility to public transportation. Euclidean buffers tend to exaggerate a facilities service area, therefore we utilized the ArcGIS Network Analyst extension to generate our proximity to transportation stops by walking. To do this, we created a network dataset for walking from the City of Vancouver's Open Data public streets and lanes (alleyways). To simulate real walking, elevation values were assigned to all overpasses. This will ensure that roads below an overpass can't connect to the overpass. Using the network dataset, service areas were created around public transportation stops based on four distance thresholds:
-- 150m (High Accessibility)
-- 300m (Moderate Accessibility)
-- 450m (Low Accessibility)
-- Greater than 450m (Very Low Accessibility)
+The Accessibility Index (AI) measures proximity to public transportation using a weighted linear combination. Being within an appropriate walking distance to a bus stop from your house typically suggests greater accessibility to public transportation. Euclidean buffers tend to exaggerate a facilities service area, therefore we utilized the ArcGIS Network Analyst extension to generate our proximity to transportation stops by walking. To do this, we created a network dataset for walking from the City of Vancouver's Open Data public streets and lanes (alleyways). To simulate real walking, elevation values were assigned to all overpasses. This will ensure that roads below an overpass can't connect to the overpass. Using the network dataset, service areas were created around public transportation stops based on four distance thresholds. These distance thresholds were also assigned a weighting for the final index calculation based on how likely people are to walk to a stop given their proximity to the stop. These distance thresholds and weighting are:
+- 150m (High Accessibility) - 40%
+- 300m (Moderate Accessibility) - 30%
+- 450m (Low Accessibility) - 20%
+- Greater than 450m (Very Low Accessibility) - 10%
 
 ##### A higher Accessibility Index indicates better public transportation accessibility, while a lower value signifies reduced access to transit services.
 
