@@ -29,7 +29,7 @@ To accomplish our goal of showing quality of life we first begin by generating t
 
 ### **Quality of Life Index**
 
-The Quality of Life Index is a composite index created using the Analytic Hierarchy Process (AHP), a multi-criteria decision analysis (MCDA) method. It integrates our four indices to assess overall quality of life.
+The Quality of Life Index (QOLI) is a composite index created using the Analytic Hierarchy Process (AHP), a multi-criteria decision analysis (MCDA) method. It integrates our four indices to assess overall quality of life.
 Pairwise comparisons were used to determine the relative importance of each criterion:
 
 ![Image](https://github.com/user-attachments/assets/48ac7357-187f-487b-aee5-0d14ac91bbcf)
@@ -41,13 +41,13 @@ From the pairwise comparison, the resulting weights were produced for each indic
 - **Homeownership Rate:** 18.2%
 - **Accessibility Index:** 9.7%
 
-With our normalized indices and criterion weights, we joined the data together into a singular layer by census tract or dissemination area. A weighted linear combination was then performed in order to calculate the Quality of Life Index value. 
+With our normalized indices and criterion weights, we joined the data together into a singular layer by census tract or dissemination area. A weighted linear combination was then performed in order to calculate the QOLI value. 
 
-The formula for the calculation of the Quality of Life Index is:
-- **Quality of Life Index** = (Homeownership Rate × 0.182) +(Housing Cost Burden Index × 0.286) + (Accessibility Index × 0.097) +(Living Wage Index × 0.435)
+The formula for the calculation of the QOLI is:
+- **QOLI** = (Homeownership Rate × 0.182) +(Housing Cost Burden Index × 0.286) + (Accessibility Index × 0.097) +(Living Wage Index × 0.435)
 
-Once the composite index value was computed, we performed a final min-max normalization on the values in order to generate a value range of 0 to 1 for better interpretation of results. A lower QOLI value indicates poorer quality of life, characterized by higher housing cost burdens, lower wages, reduced homeownership, and limited transit access.
-
+Once the composite index value was computed, we performed a final min-max normalization on the values in order to generate a value range of 0 to 1 for better interpretation of results. **A lower QOLI value indicates poorer quality of life, characterized by higher housing cost burdens, lower wages, reduced homeownership, and limited transit access.
+**
 ### Homeownership rate
 
 Homeownership rate is traditionally associated with a more stable financial situation, increased social, and civic engagement, and neighbourhood stability. We are therefore using it as a proxy measure for housing security. The census data from StatCan provides data on private households by tenure, separating between owner, renter, and dwelling provided by the local government, First Nation or Indian band (excluded from calculation). It is only a 25% dataset, so it can provide an estimate of the proportion of owners to renters in this area.
