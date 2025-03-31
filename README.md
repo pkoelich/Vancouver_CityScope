@@ -141,13 +141,13 @@ For each census tract, the proportion of land covered by each service area was c
 Proportion=Service Area within Census TractTotal Census Tract Area\text{Proportion} = \frac{\text{Service Area within Census Tract}}{\text{Total Census Tract Area}}
 A weighted sum approach was applied to prioritize proximity to transit stops, using the following weights:
 
-##### AI=(Area150m×0.40)+(Area300m×0.30)+(Area450m×0.20)+(Area>450m×0.10)
+##### AI=(Area150m×0.40)+(Area~150~×0.30)+(Area450m×0.20)+(Area>450m×0.10)
 
 ### 4.6 Quality of Life Index
 
 The Quality of Life Index (QOLI) was developed using four key indicators(calculated above):
-1.Homeownership Rate: Measures housing stability.
-1.Housing Cost Burden Index: Percentage of households spending more than 30% of income on housing.
+1. Homeownership Rate: Measures housing stability.
+1. Housing Cost Burden Index: Percentage of households spending more than 30% of income on housing.
 1. Accessibility Index: Proximity to public transit.
 1. Living Wage Index: Ratio of median household income to the living wage ($37,500 per year).
 
