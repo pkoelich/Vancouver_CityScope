@@ -66,14 +66,11 @@ Homeownership rate = Homeowners / (Homeowners+Renters)
 
 #### **Living wage index**
 
-Living Wage BC states that a living wage is the hourly amount someone needs to earn in order to cover basic expenses. These expenses include food, clothing, rental housing, transportation, childcare, and emergency savings. This is currently calculated around the most common family unit in BC, a two-parent family with two children. In 2021, the year the census data was collected, the living wage was calculated at $20.52/hour, which resulted in an annual income of $37,346, which was rounded up to $37,500 for the purposes of this analysis. For this analysis, the median household income in each census geography was compared to the estimated living wage, to show how much above or below the living wage a specific census geography is. 
+Living Wage BC states that a living wage is the hourly amount someone needs to earn in order to cover basic expenses. These expenses include food, clothing, rental housing, transportation, childcare, and emergency savings. This is currently calculated around the most common family unit in BC, a two-parent family with two children. In 2021, the year the census data was collected, the living wage was calculated at $20.52/hour, which resulted in an annual income of $37,346, which was rounded up to $37,500 for the purposes of this analysis. For this analysis, the median household income in each census geography was compared to the estimated living wage, to show how much above or below the living wage a specific census geography is. For the living wage index, values below 1 indicate living below the estimated living wage, while values above 1 indicate living above the estimate living wage. 
 
 **Calculation:**
 
 Living Wage Index = Median Household Income / 37500 (Estimated Living Wage)
-
-**Values below 1:** Below living wage
-**Values above 1:** Above living wage
 
 #### **Housing Cost Burden Index**
 
