@@ -71,7 +71,7 @@ The median household income in each census geography was compared to the estimat
 
 Calculation:
 
-Living Wage Index = Median Household Income37500
+Living Wage Index = Median Household Income ($37500)
 
 Values below 1: Below living wage
 Values above 1: Above living wage
