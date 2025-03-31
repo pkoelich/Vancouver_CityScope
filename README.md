@@ -26,6 +26,8 @@ Vancouver CityScope is an interactive Quality of Life (QoL) visualization tool, 
 
 The app delivers an interactive, visual representation of spatial differences in financial stress, housing stability, and sustainable transportation access. This comprehensive information display allows users to identify patterns and understand the individual contributions of each indicator, alongside the overall QoL assessment, all within a single application.
 
+There is a great deal of information available all in one intuitive application. The user can select a census tract or dissemination area and the feature information widget is configured to show relevant information for each index. The user can quickly flip through the various indices and explore how the data is ditributed in space. Additionally, for our transit accesibility index, the user can click on a dissemination area or census tract, and the map is configured to zoom to the area that the user selected.
+
 ## Methodology
 
 To accomplish our goal of showing quality of life we first begin by generating the individual indices. These are primarily off of census data from Statistics Canada and a Vancouver roads network that we built. The exact steps are detailed in the workflow section, below is the explanation for the indices:
