@@ -41,7 +41,7 @@ From the pairwise comparison, the resulting weights were produced for each indic
 - **Homeownership Rate:** 18.2%
 - **Accessibility Index:** 9.7%
 
-With our normalized indices and criterion weights, we joined the data together into a singular layer by census tract or dissemination area. A weighted linear combination was then performed in order to calculate the QOLI value. 
+The pairwise comparison also computes a consistency ratio (CR), which is a method used to assess the consistency of judgements when comparing criteria. Our CR % of 1.7 indicates high consistency with our decision making. With our normalized indices and criterion weights, we joined the data together into a singular layer by census tract or dissemination area. A weighted linear combination was then performed in order to calculate the QOLI value. 
 
 The formula for the calculation of the QOLI is:
 - **QOLI** = (Homeownership Rate × 0.182) +(Housing Cost Burden Index × 0.286) + (Accessibility Index × 0.097) +(Living Wage Index × 0.435)
