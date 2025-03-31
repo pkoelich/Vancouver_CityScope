@@ -210,15 +210,16 @@ Due to the lack of sidewalk data available for the City of Vancouver that would 
 ## Sources
 
 ### Articles:
-[Nearly half of Canadians report that rising prices are greatly impacting their ability to meet day-to-day expenses](https://www150.statcan.gc.ca/n1/daily-quotidien/240815/dq240815b-eng.htm)\
-['Harsh reality': Many Canadians are eating less, sharing expenses due to rising cost of living](https://financialpost.com/news/economy/canadians-eating-less-sharing-expenses-rising-cost-living)\
-[Quality of Life Hub - Statistics Canada](https://www160.statcan.gc.ca/index-eng.htm)\
-[Research series: How does homeownership contribute to social and civic engagement?](https://www.habitat.org/our-work/impact/research-series-how-does-homeownership-contribute-to-social-and-civic-engagement)\
-[Homeowner-renter dwelling, neighbourhood and life satisfaction gaps](https://www150.statcan.gc.ca/n1/pub/36-28-0001/2024006/article/00004-eng.htm)\
-[What is a Living Wage?](https://www.livingwagebc.ca/what_is_living_wage)\
-[Households that spent 30% or more of income on shelter costs, Canada, 2011 to 2021](https://www12.statcan.gc.ca/census-recensement/2021/as-sa/fogs-spg/alternative.cfm?topic=7&lang=E&dguid=2021A000011124&objectId=4a)
-[Living Wage Rates 2021](https://www.livingwagebc.ca/living_wage2021#:~:text=The%202021%20living%20wage%20for,than%20BC%27s%20%2415.20%20minimum%20wage)\
-[Living Wages in BC and Canada 2024](https://www.livingwagebc.ca/living_wage_rates)
+1. [Nearly half of Canadians report that rising prices are greatly impacting their ability to meet day-to-day expenses](https://www150.statcan.gc.ca/n1/daily-quotidien/240815/dq240815b-eng.htm)\
+2. ['Harsh reality': Many Canadians are eating less, sharing expenses due to rising cost of living](https://financialpost.com/news/economy/canadians-eating-less-sharing-expenses-rising-cost-living)\
+3. [Quality of Life Hub - Statistics Canada](https://www160.statcan.gc.ca/index-eng.htm)\
+4. [Research series: How does homeownership contribute to social and civic engagement?](https://www.habitat.org/our-work/impact/research-series-how-does-homeownership-contribute-to-social-and-civic-engagement)\
+5. [Homeowner-renter dwelling, neighbourhood and life satisfaction gaps](https://www150.statcan.gc.ca/n1/pub/36-28-0001/2024006/article/00004-eng.htm)\
+6. [What is a Living Wage?](https://www.livingwagebc.ca/what_is_living_wage)\
+7. [Households that spent 30% or more of income on shelter costs, Canada, 2011 to 2021](https://www12.statcan.gc.ca/census-recensement/2021/as-sa/fogs-spg/alternative.cfm?topic=7&lang=E&dguid=2021A000011124&objectId=4a)
+8. [Living Wage Rates 2021](https://www.livingwagebc.ca/living_wage2021#:~:text=The%202021%20living%20wage%20for,than%20BC%27s%20%2415.20%20minimum%20wage)\
+9. [Living Wages in BC and Canada 2024](https://www.livingwagebc.ca/living_wage_rates)
+10. [The Association of Trip Distance With Walking To Reach Public Transit: Data from the California Household Travel Survey](https://pmc.ncbi.nlm.nih.gov/articles/PMC4941821/#:~:text=There%20is%20some%20evidence%20that,stop%20versus%20a%20bus%20stop.&text=The%20problem%20is%20that%20these,any%20standard%20catchment%20zone%20definition.)
 
 
 
