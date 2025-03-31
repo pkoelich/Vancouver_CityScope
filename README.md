@@ -206,6 +206,7 @@ Due to the lack of sidewalk data available for the City of Vancouver that would 
 | Building Footprints 2015 | City of Vancouver | [Link](https://opendata.vancouver.ca/explore/dataset/building-footprints-2015/information/) |
 | Public Streets | City of Vancouver | [Link](https://opendata.vancouver.ca/explore/dataset/public-streets/information/) |
 | Lanes | City of Vancouver | [Link](https://opendata.vancouver.ca/explore/dataset/lanes/information/) |
+| TSPR_OpenData_Catalog_FL | Translink GIS | [Link](https://www.arcgis.com/home/item.html?id=11b5561d409843a0ae27f8b490f9dda9) |
 
 ## Sources
 
