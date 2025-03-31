@@ -95,7 +95,13 @@ The Accessibility Index (AI) measures proximity to public transportation using a
 
 The resulting service area was unioned to census geography data (census tract and dissemination area). The proportion of each service area distance within each census tract or dissemination area was calculated, and then a weighted linear combination of this proportion multiplied by the respective weights was performed to generate our Accessibility Index. The same process was applied for the City of Vancouver's Building Footprints from 2015, with the only difference being that the proportion of each service area distance within each building was calculated. **A higher Accessibility Index indicates better public transportation accessibility, while a lower value signifies reduced access to transit services.**
 
-#### All derived values from 2.1 - 2.3 were min-max normalized to ensure comparability
+### Normalization
+
+In order to create a composite index representing quality of life, all of our above mentioned indices were min-max normalized for comparability and to ensure compatibility when performing the weighted linear combination. Min-max normalization is a data normalization technique that rescales data values between 0 and 1, by using the minimum and maximum values for the dataset. The min-max normalization formula is as follows:
+
+![Image](https://github.com/user-attachments/assets/ba149252-5f8a-49d5-bf1f-2de4f9ee5436)
+
+_x represents the index value_
 
 ## Workflows
 
