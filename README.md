@@ -36,10 +36,10 @@ Pairwise comparisons were used to determine the relative importance of each crit
 
 From the pairwise comparison, the resulting weights were produced for each indices:
 
-- Living Wage Index: 43.5%
-- Housing Cost Burden Index: 28.6%
-- Homeownership Rate: 18.2%
-- Accessibility Index: 9.7%
+- **Living Wage Index:** 43.5%
+- **Housing Cost Burden Index:** 28.6%
+- **Homeownership Rate:** 18.2%
+- **Accessibility Index:** 9.7%
     
 Quality of Life Index = (Homeownership Rate × 0.182) +(Housing Cost Burden Index × 0.286) + (Accessibility Index × 0.097) +(Living Wage Index × 0.435)
 
