@@ -79,7 +79,7 @@ Accessibility Index = (Area150m ​× 0.40) + (Area300m​ × 0.30) + (Area450m�
 
 The Quality of Life Index is a composite index created using Multi-Criteria Decision Analysis (MCDA) and the Analytic Hierarchy Process (AHP). It integrates the four indices to assess overall quality of life:
 Pairwise comparisons in AHP were used to determine the relative importance of each criterion:
-    - Living Wage Index: 43.5%
+    * Living Wage Index: 43.5%
     - Housing Cost Burden Index: 28.6%
     - Homeownership Rate: 18.2%
     - Accessibility Index: 9.7%
