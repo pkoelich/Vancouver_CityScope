@@ -76,7 +76,7 @@ Living Wage Index = Median Household Income / 37500 (Estimated Living Wage)
 
 A commonly used measure adopted by Statistics Canada is that if shelter costs are more than 30% of income, then housing is considered unaffordable<sup>7</sup>. Statistics Canada collects data of how many households spend more than 30% of their income on shelter. This is a 25% dataset, so we are able to show proportionally how many households are spending more than 30% of their income on housing per census geography.
 
-Calculation:
+**Calculation of Housing Cost Burden Index:**
 - A = number of households spending less than 30% of their income on shelter costs.
 - B = number of households spending more than 30% of their income on shelter costs.
 - Total = total number of households (A + B)
