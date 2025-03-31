@@ -95,9 +95,9 @@ Quality of Life Index = (Homeownership Rate × 0.182) +(Housing Cost Burden Inde
 ### 4.1 Data isolation 
 
 1. Extract data from Canadian census profile using ArcGIS Data Interoperability tool by isolating the rows that contain:
- * The number of households by tenure owner and renter: CHARACTERISTIC_ID 1415 and 1416
- * Number or people spending more and less than 30% of their incomes on shelter cost: CHARACTERISTIC_ID 1466 and 1467
- * Total median household income: CHARACTERISTIC_ID 243
+- * The number of households by tenure owner and renter: CHARACTERISTIC_ID 1415 and 1416
+- * Number or people spending more and less than 30% of their incomes on shelter cost: CHARACTERISTIC_ID 1466 and 1467
+- * Total median household income: CHARACTERISTIC_ID 243
 
 1. The resulting csv file will have the isolated values for each CHARACTERISTIC_ID for all census tracts and dissemination areas.
   
