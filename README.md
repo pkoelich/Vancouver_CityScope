@@ -141,7 +141,7 @@ For each census tract, the proportion of land covered by each service area was c
 Proportion=Service Area within Census TractTotal Census Tract Area\text{Proportion} = \frac{\text{Service Area within Census Tract}}{\text{Total Census Tract Area}}
 A weighted sum approach was applied to prioritize proximity to transit stops, using the following weights:
 
-##### AI=(Area150m×0.40)+(Area~150~×0.30)+(Area450m×0.20)+(Area>450m×0.10)
+##### AI=(Area<sub>150</sub>×0.40)+(Area<sub>300</sub>×0.30)+(Area<sub>450</sub>×0.20)+(Area<sub>>450</sub>m×0.10)
 
 ### 4.6 Quality of Life Index
 
