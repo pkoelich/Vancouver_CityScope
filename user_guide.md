@@ -2,7 +2,7 @@
 
 ## Opening the app
 When you open the application you are greeted with the splash page with a little bit of information about the application, click on OK to proceed to the main app.
-![splash page](Images/splash-page.png)
+![splash page](Images/splash_page.png)
 
 ## App layout and how to use each component
 Here is the main page:
