@@ -48,27 +48,27 @@ From the pairwise comparison, the resulting weights were produced for each indic
 
 The pairwise comparison also computes a **consistency ratio** (CR), which is a method used to assess the consistency of judgements when comparing criteria. Our CR % of 1.7 indicates high consistency with our decision making. With our normalized indices and criterion weights, we joined the data together into a singular layer by census tract or dissemination area. A weighted linear combination was then performed in order to calculate the QOLI value. 
 
-**The formula for the calculation of the QOLI is:**
+**Calculation of QOLI:**
 - QOLI = (Homeownership Rate × 0.182) + (Housing Cost Burden Index × 0.286) + (Accessibility Index × 0.097) + (Living Wage Index × 0.435)
 
 Once the composite index value was computed, we performed a final min-max normalization on the values in order to generate a value range of 0 to 1 for better interpretation of results. **A lower QOLI value indicates poorer quality of life, characterized by higher housing cost burdens, lower wages, reduced homeownership, and limited transit access.**
 
-### Homeownership rate
+### Homeownership Rate
 
 Homeownership rate is traditionally associated with a more stable financial situation, increased social, and civic engagement, and neighbourhood stability. We are therefore using it as a proxy measure for housing security. The census data from StatCan provides data on private households by tenure, separating between owner, renter, and dwelling provided by the local government, First Nation or Indian band (excluded from calculation). It is only a 25% dataset, so it can provide an estimate of the proportion of owners to renters in this area.
 
-**Calculation:**
+**Calculation of Homeownership Rate:**
 
-Homeownership rate = Homeowners / (Homeowners+Renters)
+Homeownership Rate = Homeowners / (Homeowners+Renters)
 
 
 ### **Financial Stress**
 
-#### **Living wage index**
+#### **Living Wage Index**
 
 Living Wage BC states that a living wage is the hourly amount someone needs to earn in order to cover basic expenses. These expenses include food, clothing, rental housing, transportation, childcare, and emergency savings. This is currently calculated around the most common family unit in BC, a two-parent family with two children. In 2021, the year the census data was collected, the living wage was calculated at $20.52/hour, which resulted in an annual income of $37,346, which was rounded up to $37,500 for the purposes of this analysis. For this analysis, the median household income in each census geography was compared to the estimated living wage, to show how much above or below the living wage a specific census geography is. For the living wage index, values below 1 indicate living below the estimated living wage, while values above 1 indicate living above the estimate living wage. 
 
-**Calculation:**
+**Calculation of Living Wage Index:**
 
 Living Wage Index = Median Household Income / 37500 (Estimated Living Wage)
 
