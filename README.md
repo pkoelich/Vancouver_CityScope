@@ -237,6 +237,11 @@ Due to the lack of sidewalk data available for the City of Vancouver that would 
 [Video by Jack Sparrow  from Pexels](https://www.pexels.com/video/a-couple-buying-groceries-4121625/)\
 [Video by Los Muertos Crew from Pexels](https://www.pexels.com/video/lettuce-and-potatoes-on-market-stall-10039758/)
 
+### Audio Sources:
+[Audio by SigmaMusicAart from Pixabay](https://pixabay.com/music/modern-classical-historical-documentary-background-atmospheric-moments-253424/)
+[Audio by freesound_community from Pixabay](https://pixabay.com/sound-effects/echo-105584/)
+
+
 
 
 
