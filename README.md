@@ -110,6 +110,7 @@ Total median household income: CHARACTERISTIC_ID 243
 1. Configure a popup to compare the average homeownership rate to the one present in each census geography.
 1. Create another empty field
 1. Use explore statistics to find the minimum and maximum values for the field, then normalize each entry according to those values. This will be used for comparison in the MCDA
+
 ### 4.3 Living wage index:
 1. Create an empty field.
 1. Calculate the field by dividing median household income by the estimated living wage.
@@ -126,16 +127,17 @@ Total median household income: CHARACTERISTIC_ID 243
 1. Use explore statistics to find the minimum and maximum values for the field, then normalize each entry according to those values. This will be used for comparison in the MCDA.
 
 ### 4.5 Accessibility Index
-#### 4.5.1 Service Area Calculation
-Using a network dataset, service areas were created around public transportation stops at four distance thresholds:
-1. 150m (high accessibility)
-2. 300m (moderate accesibility)
-3. 450m ( low accessibility)
-4. Greater than 450m (very low accessibility)
 
-The total land area covered by each service area within each census tract was calculated.
+#### 4.5.1 Network Dataset Creation
+1. Add a distance field and use Calculate Geometry to calculate the length of each road in meters.
+2. Add a 'from elevation' field and a 'to elevation' field. Assign values of 1 to bridges and overpasses to simulate real walking along the network.
+3. Create a network dataset
 
-#### 4.5.2 Accessibility Index Calculation
+#### 4.5.2 Service Area Calculation
+1. Import bus stops, bus exchanges, and skytrain stations as facilities in the service area
+2. Run service area analysis with 150m, 300m, and 450m cutoffs. Set output geometry to high precision and dissolve
+
+#### 4.5.3 Accessibility Index Calculation
 
 For each census tract, the proportion of land covered by each service area was computed:
 Proportion=Service Area within Census TractTotal Census Tract Area\text{Proportion} = \frac{\text{Service Area within Census Tract}}{\text{Total Census Tract Area}}
