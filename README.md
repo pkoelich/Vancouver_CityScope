@@ -183,6 +183,14 @@ The weights assigned to each layer were derived from pairwise comparisons using 
 
 Our Quality of Life index incorporated four key factors: accessibility, living wage index, housing cost burden index, and homeownership rate. However, it's important to acknowledge that quality of life is a multifaceted concept. Statistics Canada's Quality of Life Hub, for instance, identifies 84 distinct factors, including crucial aspects like environmental quality, social connection, and health. Due to time and data limitations, our analysis represents only a subset of these factors. Consequently, while the app provides valuable insights, it may not fully capture the nuanced reality of quality of life in each location. Users should interpret the results with this limitation in mind, understanding that other significant factors could influence their overall assessment.
 
+#### Accessibility Index Weighting & Analysis
+
+Our Accessibility Index incorporated weighting 
+
+#### **Network Dataset**
+
+Due to the lack of sidewalk data available for the City of Vancouver that would be considered open data, our network dataset for walking was creating with the City of Vancouver's Open Data of public streets and lanes (alleyways). The public streets and lanes data is spatially represented as centrelines. While these streets do have sidewalks in real life, 
+
 
 ## Data dictionary
 
