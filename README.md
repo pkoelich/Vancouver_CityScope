@@ -35,7 +35,7 @@ Below is an explanation of our indices, which are primarily based on census data
 The Quality of Life Index (QOLI) is a composite index created using the Analytic Hierarchy Process (AHP), a multi-criteria decision analysis (MCDA) method. It integrates our four indices to assess overall quality of life. 
 Pairwise comparisons were used to determine the relative importance of each criterion:
 
-![Image](https://github.com/user-attachments/assets/48ac7357-187f-487b-aee5-0d14ac91bbcf)
+![Image](Images/AHP Priorities.png)
 
 From the pairwise comparison, the resulting weights were produced for each index:
 
@@ -97,7 +97,7 @@ The resulting service area was unioned to census geography data (census tract an
 
 In order to create a composite index representing quality of life, all of our above-mentioned indices were min-max normalized for comparability and to ensure compatibility when performing the weighted linear combination. Min-max normalization is a data normalization technique that rescales data values between 0 and 1, by using the minimum and maximum values for the dataset. The min-max normalization formula is as follows:
 
-![Image](https://github.com/user-attachments/assets/ba149252-5f8a-49d5-bf1f-2de4f9ee5436)
+![Image](Images/min-max.png)
 
 ## Workflows
 
@@ -217,7 +217,7 @@ Here is the main page:
 5. Legend - shows how values are mapped visually. <br>  ![legend](Images/legend.png)
 6. View switcher - switch between census tract and dissemination area view.  ![ct_da_switch](Images/ct_da_switch.png)
 7. Feature information widget - Configured to show relevant information and comparison data for each index. <br><br> Quality of life: <br> ![feature_info_1](Images/feature_info_1.png) <br><br> Housing Cost Burden: <br> ![feature_info_housing](Images/feature_info_2.png) <br><br>
-Hover over the chart to view the breakdown of the information. <br> ![Image](https://github.com/user-attachments/assets/de3d9d23-c990-4a61-b1d2-bea4210244bb) <br><br>
+Hover over the chart to view the breakdown of the information. <br> ![Image](Images/hover.png) <br><br>
 8. Widget controller - The user can switch basemaps and print <br><br> Basemaps - click to switch: <br> ![basemap](Images/basemap.png) <br><br> Print - the user can select format, title, resolution, and other settings to generate a pdf map: <br> ![print_1](Images/print.png) <br><br> Once the output is generated, the user can view or download them in this tab: <br> ![print_result](Images/print_3.png)
 
 ### Additional information
