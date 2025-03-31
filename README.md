@@ -3,8 +3,8 @@
 ![logo](Images/Logo.png)
 
 ## Team
-Kyle Vu
-Noah Shibagaki-Ong
+Kyle Vu\
+Noah Shibagaki-Ong\
 Pierre Koelich
 
 
