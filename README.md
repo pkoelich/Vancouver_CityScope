@@ -43,8 +43,8 @@ From the pairwise comparison, the resulting weights were produced for each indic
 
 The pairwise comparison also computes a **consistency ratio** (CR), which is a method used to assess the consistency of judgements when comparing criteria. Our CR % of 1.7 indicates high consistency with our decision making. With our normalized indices and criterion weights, we joined the data together into a singular layer by census tract or dissemination area. A weighted linear combination was then performed in order to calculate the QOLI value. 
 
-The formula for the calculation of the QOLI is:
-- **QOLI** = (Homeownership Rate × 0.182) +(Housing Cost Burden Index × 0.286) + (Accessibility Index × 0.097) +(Living Wage Index × 0.435)
+**The formula for the calculation of the QOLI is:**
+- QOLI = (Homeownership Rate × 0.182) +(Housing Cost Burden Index × 0.286) + (Accessibility Index × 0.097) +(Living Wage Index × 0.435)
 
 Once the composite index value was computed, we performed a final min-max normalization on the values in order to generate a value range of 0 to 1 for better interpretation of results. **A lower QOLI value indicates poorer quality of life, characterized by higher housing cost burdens, lower wages, reduced homeownership, and limited transit access.**
 
