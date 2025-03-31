@@ -30,7 +30,7 @@ There is a great deal of information available all in one intuitive application.
 
 ## Methodology
 
-To accomplish our goal of showing quality of life we first begin by generating the individual indices. These are primarily off of census data from Statistics Canada and a Vancouver roads network that we built. The exact steps are detailed in the workflow section, below is the explanation for the indices:
+Below is an explanation of our indices, which are primarily based off of census data from Statistics Canada and a Vancouver roads network that we created. General analysis steps and calculations for the indices are noted below. For the exact step by step analysis, refer to the workflow section.
 
 ### **Quality of Life Index**
 
