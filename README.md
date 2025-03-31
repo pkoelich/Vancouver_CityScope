@@ -29,7 +29,7 @@ To accomplish our goal of showing quality of life we first begin by generating t
 
 ### **Quality of Life Index**
 
-The Quality of Life Index (QOLI) is a composite index created using the Analytic Hierarchy Process (AHP), a multi-criteria decision analysis (MCDA) method. It integrates our four indices to assess overall quality of life.
+The Quality of Life Index (QOLI) is a composite index created using the Analytic Hierarchy Process (AHP), a multi-criteria decision analysis (MCDA) method. It integrates our four indices to assess overall quality of life. 
 Pairwise comparisons were used to determine the relative importance of each criterion:
 
 ![Image](https://github.com/user-attachments/assets/48ac7357-187f-487b-aee5-0d14ac91bbcf)
@@ -44,7 +44,7 @@ From the pairwise comparison, the resulting weights were produced for each indic
 The pairwise comparison also computes a **consistency ratio** (CR), which is a method used to assess the consistency of judgements when comparing criteria. Our CR % of 1.7 indicates high consistency with our decision making. With our normalized indices and criterion weights, we joined the data together into a singular layer by census tract or dissemination area. A weighted linear combination was then performed in order to calculate the QOLI value. 
 
 **The formula for the calculation of the QOLI is:**
-- QOLI = (Homeownership Rate × 0.182) +(Housing Cost Burden Index × 0.286) + (Accessibility Index × 0.097) +(Living Wage Index × 0.435)
+- QOLI = (Homeownership Rate × 0.182) + (Housing Cost Burden Index × 0.286) + (Accessibility Index × 0.097) + (Living Wage Index × 0.435)
 
 Once the composite index value was computed, we performed a final min-max normalization on the values in order to generate a value range of 0 to 1 for better interpretation of results. **A lower QOLI value indicates poorer quality of life, characterized by higher housing cost burdens, lower wages, reduced homeownership, and limited transit access.**
 
@@ -87,9 +87,11 @@ A value of 0 for this index means that none of the households in this census tra
 
 ### **Accessibility Index**
 
-The Accessibility Index (AI) measures proximity to public transportation using a weighted sum. Being within an appropriate walking distance to a bus stop from your house typically suggests greater accessibility to public transportation. Higher values indicate better accessibility to public transportation.
-Accessibility Index = (Area150m ​× 0.40) + (Area300m​ × 0.30) + (Area450m​ × 0.20)
-+ (Area>450m​ × 0.10)
+The Accessibility Index (AI) measures proximity to public transportation using a weighted sum. Being within an appropriate walking distance to a bus stop from your house typically suggests greater accessibility to public transportation. Higher values indicate better accessibility to public transportation. Euclidean buffers tend to exaggerate a facilities service area, therefore we utilized the ArcGIS Network Analyst extension to generate our proximity to transportation stops by walking. To do this, we created a network dataset for walking from the City of Vancouver's Open Data public streets and lanes (alleyways). To simulate real walking, elevation values were assigned to all overpasses. This will ensure that roads below an overpass can't connect to the overpass. Using the network dataset, service areas were created around public transportation stops based on four distance thresholds:
+- 150m (High Accessibility)
+- 300m (Moderate Accessibility)
+- 450m (Low Accessibility)
+- > 450m (Very Low Accessibility)
 
 ##### A higher Accessibility Index indicates better public transportation accessibility, while a lower value signifies reduced access to transit services.
 
