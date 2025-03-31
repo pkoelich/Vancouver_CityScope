@@ -112,9 +112,9 @@ In order to create a composite index representing quality of life, all of our ab
 ### **Data isolation** 
 
 1. Extract data from Canadian census profile using ArcGIS Data Interoperability tool by isolating the rows that contain:
-    - The number of households by tenure owner and renter: CHARACTERISTIC_ID 1415 and 1416
-    - Number or people spending more and less than 30% of their incomes on shelter cost: CHARACTERISTIC_ID 1466 and 1467
-    - Total median household income: CHARACTERISTIC_ID 243
+    - The number of households by tenure owner and renter (CHARACTERISTIC_ID 1415 and 1416)
+    - Number or people spending more and less than 30% of their incomes on shelter cost (CHARACTERISTIC_ID 1466 and 1467)
+    - Total median household income (CHARACTERISTIC_ID 243)
 
 1. The resulting csv file will have the isolated values for each CHARACTERISTIC_ID for all census tracts and dissemination areas.
   
@@ -138,7 +138,7 @@ In order to create a composite index representing quality of life, all of our ab
 
 ### **Housing cost burden index:**
 1. Each census tract contains data for the number of people who are spending more than and less than 30% of their median household income on shelter costs. Start by creating an empty field, label it correctly and assign it the correct data type.
-1. Use the field calculator to calculate the field according to the formula detailed in section 2.2.2
+1. Use the field calculator to calculate the field according to the formula detailed in the methodology.
 1. Configure a pie chart to show the percentage spending more and less than 30% of their income on housing.
 1. Create another empty field
 1. Use explore statistics to find the minimum and maximum values for the field, then min-max normalize each entry according to those values. This will be used for comparison in the MCDA.
@@ -189,12 +189,11 @@ Our Quality of Life index incorporated four key factors: accessibility, living w
 
 #### Accessibility Index Weighting & Analysis
 
-Our Accessibility Index incorporated weighting 
+Our Accessibility Index incorporated weighting based on proximity to public transport spots. However, there is some evidence that users are willing to walk further to reach a skytrain station versus a bus stop. Thus, a limitation of our analysis was that we did not calculate a separate service area buffer for skytrain stations with distances that are further away in comparison to bus stops. By having both of a service area for both skytrain stations and bus stops that are weighted by proximity to that stop, and performing a weighted linear combination of both, we can produce a more comprehensive analysis. 
 
 #### **Network Dataset**
 
-Due to the lack of sidewalk data available for the City of Vancouver that would be considered open data, our network dataset for walking was creating with the City of Vancouver's Open Data of public streets and lanes (alleyways). The public streets and lanes data is spatially represented as centrelines. While these streets do have sidewalks in real life, 
-
+Due to the lack of sidewalk data available for the City of Vancouver that would be considered open data, our network dataset for walking was created with the City of Vancouver's Open Data of public streets and lanes (alleyways). The public streets and lanes data is spatially represented as centrelines. While these streets do have sidewalks in real life, it is not entirely accurate to assume that the centrelines are the sidewalks. In addition, we were not able to simulate crosswalks, therefore the network is treating distances as if you were in the middle of the street. This could affect the distance calculation in the service area, albeit minimally.
 
 ## Data dictionary
 
