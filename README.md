@@ -7,7 +7,7 @@ Noah Shibagaki-Ong\
 Pierre Koelich
 
 
-## 1. Mission Statement
+## Mission Statement
 
 In recent years, people around the world have had to face a global cost of living crisis, fuelled by factors such as general inflation, supply chain issues, and geopolitical instability. In 2024, Statistics Canada released a report stating that nearly half (45%) of Canadians reported that rising prices were greatly affecting their ability to meet their day-to-day expenses, 12% higher than reported two years prior in 2022 (33%). With increasing costs for housing, energy, groceries, and transportation, Canadians have needed to find ways to share expenses through bill splitting strategies such as taking public transportation, buying in bulk, and cohabiting with others.
 
@@ -19,16 +19,16 @@ Our project looks at spatial differences across the three categories of financia
 
 Our app, Vancouver CityScope, is an interactive visual information product containing a map layer with a quality of life score assessed via quality of life indicators such as income to living wage ratio, homeownership rate, housing cost burden index, and transit accessibility. Each of the layers that comprises the final product is also able to be viewed individually. 
 
-## 2. Statement of Characteristics
+## Statement of Characteristics
 
 
 
-## 3. Methodology
+## Methodology
 
 To accomplish our goal of showing quality of life we first begin by generating the individual indices. These are primarily off of census data from Statistics Canada and a Vancouver roads network that we built. The exact steps are detailed in the workflow section, below is the explanation for the indices:
 
 
-### 3.1 Homeownership rate
+### Homeownership rate
 
 Homeownership rate is traditionally associated with a more stable financial situation, increased social, and civic engagement, and neighbourhood stability. We are therefore using it as a proxy measure for housing security. The census data from StatCan provides data on private households by tenure, separating between owner, renter, and dwelling provided by the local government, First Nation or Indian band (excluded from calculation). It is only a 25% dataset, so it can provide an estimate of the proportion of owners to renters in this area.
 
@@ -37,9 +37,9 @@ The base calculation is:
  Homeownership rate = Homeowners(Homeowners+Renters)
 
 
-### 3.2 Financial Stress
+### Financial Stress
 
-#### 3.2.1 Living wage index
+#### 1.1 Living wage index
 
 Living Wage BC states that a living wage is the hourly amount someone needs to earn in order to cover basic expenses. These expenses include food, clothing, rental housing, transportation, childcare, and emergency savings. This is currently calculated around the most common family unit in BC, a two-parent family with two children. In 2021, the year the census data was collected, the living wage was calculated at $20.52/hour, which resulted in an annual income of $37,346, which was rounded up to $37,500 for the purposes of this analysis. 
 
@@ -52,7 +52,7 @@ Living Wage Index = Median Household Income37500
 Values below 1: Below living wage
 Values above 1: Above living wage
 
-#### 3.2.2 Housing Cost Burden Index
+#### 1.2 Housing Cost Burden Index
 
 A commonly used measure adopted by Statistics Canada is that if shelter costs are more than 30% of income, then housing is considered unaffordable(5). Statistics Canada collects data of how many households spend more than 30% of their income on shelter. This is a 25% dataset, so we are able to show proportionally how many households are spending more than 30% of their income on housing per census geography.
 
@@ -65,7 +65,7 @@ Housing Cost Burden Index =[B Total − A Total+1] 2
 
 A value of 0 for this index means that none of the households in this census tract are cost-burdened by housing, and a value of 1 means that all of them are.
 
-### 3.3 Accessibility Index
+### Accessibility Index
 
 The Accessibility Index (AI) measures proximity to public transportation using a weighted sum. Being within an appropriate walking distance to a bus stop from your house typically suggests greater accessibility to public transportation. Higher values indicate better accessibility to public transportation.
 Accessibility Index = (Area150m ​× 0.40) + (Area300m​ × 0.30) + (Area450m​ × 0.20)
@@ -75,7 +75,7 @@ Accessibility Index = (Area150m ​× 0.40) + (Area300m​ × 0.30) + (Area450m�
 
 #### All derived values from 2.1 - 2.3 were min-max normalized to ensure comparability
 
-### 3.4 Quality of Life Index
+### Quality of Life Index
 
 The Quality of Life Index is a composite index created using Multi-Criteria Decision Analysis (MCDA) and the Analytic Hierarchy Process (AHP). It integrates the four indices to assess overall quality of life:
 Pairwise comparisons in AHP were used to determine the relative importance of each criterion:
@@ -93,7 +93,7 @@ Quality of Life Index = (Homeownership Rate × 0.182) +(Housing Cost Burden Inde
 
 ![Workflow](Images/qol_index_fix.jpg)
 
-### 4.1 Data isolation 
+### **Data isolation** 
 
 1. Extract data from Canadian census profile using ArcGIS Data Interoperability tool by isolating the rows that contain:
     - The number of households by tenure owner and renter: CHARACTERISTIC_ID 1415 and 1416
@@ -104,7 +104,7 @@ Quality of Life Index = (Homeownership Rate × 0.182) +(Housing Cost Burden Inde
   
 1. The data is then joined to a polygon dataset clipped to the City of Vancouver extent, so that only the census tracts and dissemination areas in Vancouver are visible. Each DA or CT polygon now contains the information from the Census Profile csv and can be used for further data analysis.
 
-### 4.2 Homeownership rate:
+### **Homeownership rate:**
 
 1. Each census tract or dissemination area has a value for the number of households by tenure - owner and renter in two separate fields. To calculate homeownership rate we have to create an empty field and populate the field with the Calculate Field tool, dividing the number of owners by the combined total of owners and renters.
 1. Find the average homeownership rate, found using explore statistics in ArcGIS Pro. Create an empty field, and assign all the values to the average rate.
@@ -112,7 +112,7 @@ Quality of Life Index = (Homeownership Rate × 0.182) +(Housing Cost Burden Inde
 1. Create another empty field
 1. Use explore statistics to find the minimum and maximum values for the field, then min-max normalize each entry according to those values. This will be used for comparison in the MCDA
 
-### 4.3 Living wage index:
+### **Living wage index:**
 1. Create an empty field.
 1. Calculate the field by dividing median household income by the estimated living wage.
 1. Create another empty field, and set the value to the estimated living wage, 37500.
@@ -120,26 +120,26 @@ Quality of Life Index = (Homeownership Rate × 0.182) +(Housing Cost Burden Inde
 1. Create another empty field
 1. Use explore statistics to find the minimum and maximum values for the field, then min-max normalize each entry according to those values. This will be used for comparison in the MCDA.
 
-### 4.4 Housing cost burden index:
+### **Housing cost burden index:**
 1. Each census tract contains data for the number of people who are spending more than and less than 30% of their median household income on shelter costs. Start by creating an empty field, label it correctly and assign it the correct data type.
 1. Use the field calculator to calculate the field according to the formula detailed in section 2.2.2
 1. Configure a pie chart to show the percentage spending more and less than 30% of their income on housing.
 1. Create another empty field
 1. Use explore statistics to find the minimum and maximum values for the field, then min-max normalize each entry according to those values. This will be used for comparison in the MCDA.
 
-### 4.5 Accessibility Index
+### **Accessibility Index**
 
-#### 4.5.1 Network Dataset Creation
+#### Network Dataset Creation
 1. Add a distance field and use Calculate Geometry to calculate the length of each road in meters.
 2. Add a 'from elevation' field and a 'to elevation' field. Assign values of 1 to bridges and overpasses to simulate real walking along the network.
 3. Create a network dataset
 
-#### 4.5.2 Service Area Calculation
+#### Service Area Calculation
 1. Import bus stops, bus exchanges, and skytrain stations as facilities in the service area
 2. Run service area analysis with 150m, 300m, and 450m cutoffs. Set output geometry to high precision and dissolve.
 3. A polygon will be output with four fields indicating distance from transportation stops.
 
-#### 4.5.3 Accessibility Index Calculation
+#### Accessibility Index Calculation
 
 1. Run _Union tool_ on service area polygon with census tract boundary layer
 2. Run _Clip tool_ on the output to the original census tract boundary extent to remove unnecessary service areas
@@ -150,29 +150,29 @@ Quality of Life Index = (Homeownership Rate × 0.182) +(Housing Cost Burden Inde
 7. Use explore statistics to find the minimum and maximum values for the field, then min-max normalize each entry according to those values. This will normalize our values on a scale of 0 to 1 for better interpretation.
 8. Repeat steps 1 to 7 with the dissemination area boundary layer and the City of Vancouver building footprints (2015) layer. Use their respective unique identifiers when dissolving.
 
-### 4.6 Quality of Life Index
+### **Quality of Life Index**
 
 1. Join all four indices (Homeownership Rate, Living Wage Index, Housing Cost Burden Index, Accessibility Index) based on the unique census boundary identifier (CTUID for census tract, DAUID for dissemination area).
 2. Delete all duplicate fields for better presentation of data.
 3. Add field and calculate the weighted sum of all four indices based on the weights mentioned in the methodology to produce the Quality of Life Index.
 4. Use explore statistics to find the minimum and maximum values for the field, then min-max normalize each entry according to those values. This will normalize our values on a scale of 0 to 1 for better interpretation.
 
-### 5. Limitations
+### Limitations
 
-### Temporal resolution
+#### **Temporal resolution**
 
 A major limitation is the currency of the census dataset. This data comes from the 2021 census, the data can be considered behind the times. The issues around financial instability in the country were only emerging when this census data was collected. This can be shown with the BC living wage going from $20.52/hour(3) to $27.05/hour (4).  Recently the true magnitude of the problem has revealed itself, and our census data lags behind, and therefore the picture that our app paints.
 
-### Weights
+#### **Weights**
 
 The weights assigned to each layer were derived from pairwise comparisons using the Analytic Hierarchy Process (AHP). This method, while widely used, inherently involves subjective judgments, which may not perfectly reflect real-world priorities. Consequently, the final results are influenced by these subjective weight assignments, a limitation common to multi-criteria decision analyses (MCDA). While unavoidable in many MCDA applications, it's important to acknowledge that variations in these weights could lead to differing outcomes. 
 
-### Problem Structuring
+#### **Problem Structuring**
 
 Our Quality of Life index incorporated four key factors: accessibility, living wage index, housing cost burden index, and homeownership rate. However, it's important to acknowledge that quality of life is a multifaceted concept. Statistics Canada's Quality of Life Hub, for instance, identifies 84 distinct factors, including crucial aspects like environmental quality, social connection, and health. Due to time and data limitations, our analysis represents only a subset of these factors. Consequently, while the app provides valuable insights, it may not fully capture the nuanced reality of quality of life in each location. Users should interpret the results with this limitation in mind, understanding that other significant factors could influence their overall assessment.
 
 
-## 6. Data dictionary
+## Data dictionary
 
 | Name    | Source |    link | 
 | -------- | ------- |  ------- |
@@ -184,7 +184,7 @@ Our Quality of Life index incorporated four key factors: accessibility, living w
 | Public Streets | City of Vancouver | [Link](https://opendata.vancouver.ca/explore/dataset/public-streets/information/) |
 | Lanes | City of Vancouver | [Link](https://opendata.vancouver.ca/explore/dataset/lanes/information/) |
 
-## 7. Sources
+## Sources
 
 ### Articles:
 [Nearly half of Canadians report that rising prices are greatly impacting their ability to meet day-to-day expenses](https://www150.statcan.gc.ca/n1/daily-quotidien/240815/dq240815b-eng.htm)\
