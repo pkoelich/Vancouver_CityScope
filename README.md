@@ -147,27 +147,15 @@ Quality of Life Index = (Homeownership Rate × 0.182) +(Housing Cost Burden Inde
 4. Add field 'ServiceAreaInCT' and divide 'IndividualSvcArea' by the area of the entire census tract.
 5. Add field 'IndividualAccessibilityScore' and create a custom field calculator Python expression to multiply 'ServiceAreaInCT' by the weight determined in the methodology based on distance to transportation stops.
 6. Run _Dissolve tool_ and dissolve the layer based on the unique identifier (CTUID). In the statistics field, sum the 'IndividualAccessibilityScore'. This will sum the score for each census tract, completing the weighted sum calculation. 
-7. Use explore statistics to find the minimum and maximum values for the field, then min-max normalize each entry according to those values. This will normalize our values on a scale of 0 to 1.
+7. Use explore statistics to find the minimum and maximum values for the field, then min-max normalize each entry according to those values. This will normalize our values on a scale of 0 to 1 for better interpretation.
 8. Repeat steps 1 to 7 with the dissemination area boundary layer and the City of Vancouver building footprints (2015) layer. Use their respective unique identifiers when dissolving.
 
 ### 4.6 Quality of Life Index
 
-The Quality of Life Index (QOLI) was developed using four key indicators(calculated above):
-1. Homeownership Rate: Measures housing stability.
-1. Housing Cost Burden Index: Percentage of households spending more than 30% of income on housing.
-1. Accessibility Index: Proximity to public transit.
-1. Living Wage Index: Ratio of median household income to the living wage ($37,500 per year).
-
-All indicators were min-max normalized to ensure comparability:
-
-Pairwise comparisons were conducted to establish priority weights for each criterion using the Analytic Hierarchy Process (AHP). The resulting weights were:
-#### Living Wage Index: 43.5%
-#### Housing Cost Burden Index: 28.6%
-#### Homeownership Rate: 18.2%
-#### Accessibility Index: 9.7%
-
-The final QOLI score for each census tract was calculated as:
-#### QOLI=(Homeownership Rate × 0.182)+(Housing Cost Burden Index × 0.286)+(Accessibility Index × 0.097)+(Living Wage Index × 0.435)
+1. Join all four indices (Homeownership Rate, Living Wage Index, Housing Cost Burden Index, Accessibility Index) based on the unique census boundary identifier (CTUID for census tract, DAUID for dissemination area).
+2. Delete all duplicate fields for better presentation of data.
+3. Add field and calculate the weighted sum of all four indices based on the weights mentioned in the methodology to produce the Quality of Life Index.
+4. Use explore statistics to find the minimum and maximum values for the field, then min-max normalize each entry according to those values. This will normalize our values on a scale of 0 to 1 for better interpretation.
 
 ### 5. Limitations
 
