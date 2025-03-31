@@ -101,8 +101,6 @@ In order to create a composite index representing quality of life, all of our ab
 
 ![Image](https://github.com/user-attachments/assets/ba149252-5f8a-49d5-bf1f-2de4f9ee5436)
 
-_x represents the index value_
-
 ## Workflows
 
 ![Workflow](Images/qol_index_fix.jpg)
