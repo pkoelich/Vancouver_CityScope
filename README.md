@@ -1,5 +1,6 @@
-![logo](Images/Logo.png)
 # Vancouver CityScope 
+
+![logo](Images/Logo.png)
 
 ## Team
 Kyle Vu\
