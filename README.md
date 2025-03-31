@@ -46,8 +46,8 @@ With our normalized indices and criterion weights, we joined the data together i
 The formula for the calculation of the QOLI is:
 - **QOLI** = (Homeownership Rate × 0.182) +(Housing Cost Burden Index × 0.286) + (Accessibility Index × 0.097) +(Living Wage Index × 0.435)
 
-Once the composite index value was computed, we performed a final min-max normalization on the values in order to generate a value range of 0 to 1 for better interpretation of results. **A lower QOLI value indicates poorer quality of life, characterized by higher housing cost burdens, lower wages, reduced homeownership, and limited transit access.
-**
+Once the composite index value was computed, we performed a final min-max normalization on the values in order to generate a value range of 0 to 1 for better interpretation of results. ****A lower QOLI value indicates poorer quality of life, characterized by higher housing cost burdens, lower wages, reduced homeownership, and limited transit access.**
+
 ### Homeownership rate
 
 Homeownership rate is traditionally associated with a more stable financial situation, increased social, and civic engagement, and neighbourhood stability. We are therefore using it as a proxy measure for housing security. The census data from StatCan provides data on private households by tenure, separating between owner, renter, and dwelling provided by the local government, First Nation or Indian band (excluded from calculation). It is only a 25% dataset, so it can provide an estimate of the proportion of owners to renters in this area.
