@@ -35,7 +35,7 @@ Below is an explanation of our indices, which are primarily based on census data
 The Quality of Life Index (QOLI) is a composite index created using the Analytic Hierarchy Process (AHP), a multi-criteria decision analysis (MCDA) method. It integrates our four indices to assess overall quality of life. 
 Pairwise comparisons were used to determine the relative importance of each criterion:
 
-![Image](Images/AHP Priorities.png)
+![Image](Images/AHP_Priorities.png)
 
 From the pairwise comparison, the resulting weights were produced for each index:
 
