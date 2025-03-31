@@ -15,7 +15,7 @@ Here is the main page:
 5. Legend - shows how values are mapped visually. <br>  ![legend](Images/legend.png)
 6. View switcher - switch between census tract and dissemination area view.  ![ct_da_switch](Images/ct_da_switch.png)
 7. Feature information widget - Configured to show relevant information and comparison data for each index. <br><br> Quality of life: <br> ![feature_info_1](Images/feature_info_1.png) <br><br> Housing Cost Burden: <br> ![feature_info_housing](Images/feature_info_2.png) <br><br>
-<br> Hover over the chart to view the breakdown of the information. <br> ![Image](https://github.com/user-attachments/assets/de3d9d23-c990-4a61-b1d2-bea4210244bb)
+Hover over the chart to view the breakdown of the information. <br> ![Image](https://github.com/user-attachments/assets/de3d9d23-c990-4a61-b1d2-bea4210244bb) <br><br>
 8. Widget controller - The user can switch basemaps and print <br><br> Basemaps - click to switch: <br> ![basemap](Images/basemap.png) <br><br> Print - the user can select format, title, resolution, and other settings to generate a pdf map: <br> ![print_1](Images/print.png) <br><br> Once the output is generated, the user can view or download them in this tab: <br> ![print_result](Images/print_3.png)
 
 ## Additional information
