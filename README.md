@@ -110,7 +110,7 @@ Quality of Life Index = (Homeownership Rate × 0.182) +(Housing Cost Burden Inde
 1. Find the average homeownership rate, found using explore statistics in ArcGIS Pro. Create an empty field, and assign all the values to the average rate.
 1. Configure a popup to compare the average homeownership rate to the one present in each census geography.
 1. Create another empty field
-1. Use explore statistics to find the minimum and maximum values for the field, then normalize each entry according to those values. This will be used for comparison in the MCDA
+1. Use explore statistics to find the minimum and maximum values for the field, then min-max normalize each entry according to those values. This will be used for comparison in the MCDA
 
 ### 4.3 Living wage index:
 1. Create an empty field.
@@ -118,14 +118,14 @@ Quality of Life Index = (Homeownership Rate × 0.182) +(Housing Cost Burden Inde
 1. Create another empty field, and set the value to the estimated living wage, 37500.
 1. Configure the pop ups to compare the median household income with the estimated living wage for each feature.
 1. Create another empty field
-1. Use explore statistics to find the minimum and maximum values for the field, then normalize each entry according to those values. This will be used for comparison in the MCDA.
+1. Use explore statistics to find the minimum and maximum values for the field, then min-max normalize each entry according to those values. This will be used for comparison in the MCDA.
 
 ### 4.4 Housing cost burden index:
 1. Each census tract contains data for the number of people who are spending more than and less than 30% of their median household income on shelter costs. Start by creating an empty field, label it correctly and assign it the correct data type.
 1. Use the field calculator to calculate the field according to the formula detailed in section 2.2.2
 1. Configure a pie chart to show the percentage spending more and less than 30% of their income on housing.
 1. Create another empty field
-1. Use explore statistics to find the minimum and maximum values for the field, then normalize each entry according to those values. This will be used for comparison in the MCDA.
+1. Use explore statistics to find the minimum and maximum values for the field, then min-max normalize each entry according to those values. This will be used for comparison in the MCDA.
 
 ### 4.5 Accessibility Index
 
@@ -136,15 +136,19 @@ Quality of Life Index = (Homeownership Rate × 0.182) +(Housing Cost Burden Inde
 
 #### 4.5.2 Service Area Calculation
 1. Import bus stops, bus exchanges, and skytrain stations as facilities in the service area
-2. Run service area analysis with 150m, 300m, and 450m cutoffs. Set output geometry to high precision and dissolve
+2. Run service area analysis with 150m, 300m, and 450m cutoffs. Set output geometry to high precision and dissolve.
+3. A polygon will be output with four fields indicating distance from transportation stops.
 
 #### 4.5.3 Accessibility Index Calculation
 
-For each census tract, the proportion of land covered by each service area was computed:
-Proportion=Service Area within Census TractTotal Census Tract Area\text{Proportion} = \frac{\text{Service Area within Census Tract}}{\text{Total Census Tract Area}}
-A weighted sum approach was applied to prioritize proximity to transit stops, using the following weights:
-
-##### AI=(Area<sub>150</sub>×0.40)+(Area<sub>300</sub>×0.30)+(Area<sub>450</sub>×0.20)+(Area<sub>>450</sub>m×0.10)
+1. Run _Union tool_ on service area polygon with census tract boundary layer
+2. Run _Clip tool_ on the output to the original census tract boundary extent to remove unnecessary service areas
+3. Add field 'IndividualServiceArea' to calculate the area of each individual service area distance.
+4. Add field 'ServiceAreaInCT' and divide 'IndividualSvcArea' by the area of the entire census tract.
+5. Add field 'IndividualAccessibilityScore' and create a custom field calculator Python expression to multiply 'ServiceAreaInCT' by the weight determined in the methodology based on distance to transportation stops.
+6. Run _Dissolve tool_ and dissolve the layer based on the unique identifier (CTUID). In the statistics field, sum the 'IndividualAccessibilityScore'. This will sum the score for each census tract, completing the weighted sum calculation. 
+7. Use explore statistics to find the minimum and maximum values for the field, then min-max normalize each entry according to those values. This will normalize our values on a scale of 0 to 1.
+8. Repeat steps 1 to 7 with the dissemination area boundary layer and the City of Vancouver building footprints (2015) layer. Use their respective unique identifiers when dissolving.
 
 ### 4.6 Quality of Life Index
 
