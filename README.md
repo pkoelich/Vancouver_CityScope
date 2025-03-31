@@ -83,6 +83,7 @@ Pairwise comparisons in AHP were used to determine the relative importance of ea
     - Housing Cost Burden Index: 28.6%
     - Homeownership Rate: 18.2%
     - Accessibility Index: 9.7%
+    
 Quality of Life Index = (Homeownership Rate × 0.182) +(Housing Cost Burden Index × 0.286) + (Accessibility Index × 0.097) +(Living Wage Index × 0.435)
 
 ##### A lower QOLI value indicates poorer quality of life, characterized by higher housing cost burdens, lower wages, reduced homeownership, and limited transit access.
