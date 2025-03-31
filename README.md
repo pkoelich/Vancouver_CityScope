@@ -27,6 +27,21 @@ Our app, Vancouver CityScope, is an interactive visual information product conta
 
 To accomplish our goal of showing quality of life we first begin by generating the individual indices. These are primarily off of census data from Statistics Canada and a Vancouver roads network that we built. The exact steps are detailed in the workflow section, below is the explanation for the indices:
 
+### **Quality of Life Index**
+
+The Quality of Life Index is a composite index created using Multi-Criteria Decision Analysis (MCDA) and the Analytic Hierarchy Process (AHP). It integrates the four indices to assess overall quality of life:
+Pairwise comparisons in AHP were used to determine the relative importance of each criterion:
+
+![Image](https://github.com/user-attachments/assets/48ac7357-187f-487b-aee5-0d14ac91bbcf)
+
+- Living Wage Index: 43.5%
+- Housing Cost Burden Index: 28.6%
+- Homeownership Rate: 18.2%
+- Accessibility Index: 9.7%
+    
+Quality of Life Index = (Homeownership Rate × 0.182) +(Housing Cost Burden Index × 0.286) + (Accessibility Index × 0.097) +(Living Wage Index × 0.435)
+
+##### A lower QOLI value indicates poorer quality of life, characterized by higher housing cost burdens, lower wages, reduced homeownership, and limited transit access.
 
 ### Homeownership rate
 
@@ -74,20 +89,6 @@ Accessibility Index = (Area150m ​× 0.40) + (Area300m​ × 0.30) + (Area450m�
 ##### A higher Accessibility Index indicates better public transportation accessibility, while a lower value signifies reduced access to transit services.
 
 #### All derived values from 2.1 - 2.3 were min-max normalized to ensure comparability
-
-### **Quality of Life Index**
-
-The Quality of Life Index is a composite index created using Multi-Criteria Decision Analysis (MCDA) and the Analytic Hierarchy Process (AHP). It integrates the four indices to assess overall quality of life:
-Pairwise comparisons in AHP were used to determine the relative importance of each criterion:
-- Living Wage Index: 43.5%
-- Housing Cost Burden Index: 28.6%
-- Homeownership Rate: 18.2%
-- Accessibility Index: 9.7%
-    
-Quality of Life Index = (Homeownership Rate × 0.182) +(Housing Cost Burden Index × 0.286) + (Accessibility Index × 0.097) +(Living Wage Index × 0.435)
-
-##### A lower QOLI value indicates poorer quality of life, characterized by higher housing cost burdens, lower wages, reduced homeownership, and limited transit access.
-
 
 ## Workflows
 
