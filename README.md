@@ -55,7 +55,7 @@ Once the composite index value was computed, we performed a final min-max normal
 
 ### Homeownership Rate
 
-Homeownership rate is traditionally associated with a more stable financial situation, increased social, and civic engagement, and neighbourhood stability. We are therefore using it as a proxy measure for housing security. The census data from StatCan provides data on private households by tenure, separating between owner, renter, and dwelling provided by the local government, First Nation or Indian band (excluded from calculation). It is only a 25% dataset, so it can provide an estimate of the proportion of owners to renters in this area.
+Homeownership rate is traditionally associated with a more stable financial situation, increased social, and civic engagement<sup>4</sup>, and neighbourhood stability<sup>5</sup>. We are therefore using it as a proxy measure for housing security. The census data from StatCan provides data on private households by tenure, separating between owner, renter, and dwelling provided by the local government, First Nation or Indian band (excluded from calculation). It is only a 25% dataset, so it can provide an estimate of the proportion of owners to renters in this area.
 
 **Calculation of Homeownership Rate:**
 
@@ -66,7 +66,7 @@ Homeownership Rate = Homeowners / (Homeowners+Renters)
 
 #### **Living Wage Index**
 
-Living Wage BC states that a living wage is the hourly amount someone needs to earn in order to cover basic expenses. These expenses include food, clothing, rental housing, transportation, childcare, and emergency savings. This is currently calculated around the most common family unit in BC, a two-parent family with two children. In 2021, the year the census data was collected, the living wage was calculated at $20.52/hour, which resulted in an annual income of $37,346, which was rounded up to $37,500 for the purposes of this analysis. For this analysis, the median household income in each census geography was compared to the estimated living wage, to show how much above or below the living wage a specific census geography is. For the living wage index, values below 1 indicate living below the estimated living wage, while values above 1 indicate living above the estimate living wage. 
+Living Wage BC states that a living wage is the hourly amount someone needs to earn in order to cover basic expenses. These expenses include food, clothing, rental housing, transportation, childcare, and emergency savings. This is currently calculated around the most common family unit in BC, a two-parent family with two children<sup>6</sup>. In 2021, the year the census data was collected, the living wage was calculated at $20.52/hour<sup>8</sup>, which resulted in an annual income of $37,346, which was rounded up to $37,500 for the purposes of this analysis. For this analysis, the median household income in each census geography was compared to the estimated living wage, to show how much above or below the living wage a specific census geography is. For the living wage index, values below 1 indicate living below the estimated living wage, while values above 1 indicate living above the estimate living wage. 
 
 **Calculation of Living Wage Index:**
 
@@ -74,7 +74,7 @@ Living Wage Index = Median Household Income / 37500 (Estimated Living Wage)
 
 #### **Housing Cost Burden Index**
 
-A commonly used measure adopted by Statistics Canada is that if shelter costs are more than 30% of income, then housing is considered unaffordable<sup>5</sup>. Statistics Canada collects data of how many households spend more than 30% of their income on shelter. This is a 25% dataset, so we are able to show proportionally how many households are spending more than 30% of their income on housing per census geography.
+A commonly used measure adopted by Statistics Canada is that if shelter costs are more than 30% of income, then housing is considered unaffordable<sup>7</sup>. Statistics Canada collects data of how many households spend more than 30% of their income on shelter. This is a 25% dataset, so we are able to show proportionally how many households are spending more than 30% of their income on housing per census geography.
 
 Calculation:
 - A = number of households spending less than 30% of their income on shelter costs.
@@ -171,7 +171,7 @@ In order to create a composite index representing quality of life, all of our ab
 
 #### **Temporal resolution**
 
-A major limitation is the currency of the census dataset. This data comes from the 2021 census, the data can be considered behind the times. The issues around financial instability in the country were only emerging when this census data was collected. This can be shown with the BC living wage going from $20.52/hour(3) to $27.05/hour (4).  Recently the true magnitude of the problem has revealed itself, and our census data lags behind, and therefore the picture that our app paints.
+A major limitation is the currency of the census dataset. This data comes from the 2021 census, the data can be considered behind the times. The issues around financial instability in the country were only emerging when this census data was collected. This can be shown with the BC living wage going from $20.52/hour<sup>8</sup> to $27.05/hour<sup>9</sup>.  Recently the true magnitude of the problem has revealed itself, and our census data lags behind, and therefore the picture that our app paints.
 
 #### **Weights**
 
