@@ -18,7 +18,7 @@ The Geonas Brothers aim to enable both citizens and decision-makers to assess ke
 
 Our project looks at spatial differences across the three categories of financial stress, housing stability, and sustainable transport methods, drawing inspiration from Canada’s Quality of Life Hub — launched by Statistics Canada in March 2022 — which brings together data for 84 indicators, spread across five domains (prosperity, health, society, environment, and good governance)<sup>3</sup>.
 
-Our app, Vancouver CityScope, is an interactive visual information product containing a map layer with a quality of life score assessed via quality of life indicators such as income to living wage ratio, homeownership rate, housing cost burden index, and transit accessibility. We aim to empower policymakers, urban planners, researchers, and community stakeholders to explore individual indicators and make informed decisions that enhance quality of life."
+Our app, Vancouver CityScope, is an interactive visual information product containing a map layer with a quality of life score assessed via quality of life indicators such as income to living wage ratio, homeownership rate, housing cost burden index, and transit accessibility. We aim to empower policymakers, urban planners, researchers, and community stakeholders to explore individual indicators and make informed decisions that enhance quality of life.
 
 ## App Characteristics
 
