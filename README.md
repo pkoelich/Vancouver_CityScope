@@ -167,7 +167,7 @@ In order to create a composite index representing quality of life, all of our ab
 3. Add field and calculate the weighted linear combination of all four indices based on the weights mentioned in the methodology to produce the Quality of Life Index.
 4. Use explore statistics to find the minimum and maximum values for the field, then min-max normalize each entry according to those values. This will normalize our values on a scale of 0 to 1 for better interpretation.
 
-### Limitations
+## Limitations
 
 #### **Temporal resolution**
 
