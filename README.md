@@ -185,7 +185,7 @@ Our Quality of Life index incorporated four key factors: accessibility, living w
 
 #### Accessibility Index Weighting & Analysis
 
-Our Accessibility Index incorporated weighting based on proximity to public transport spots. However, there is some evidence that users are willing to walk further to reach a skytrain station versus a bus stop. Thus, a limitation of our analysis was that we did not calculate a separate service area buffer for skytrain stations with distances that are further away in comparison to bus stops. By having both of a service area for both skytrain stations and bus stops that are weighted by proximity to that stop, and performing a weighted linear combination of both, we can produce a more comprehensive analysis. 
+Our Accessibility Index incorporated weighting based on proximity to public transport spots. However, there is some evidence that users are willing to walk further to reach a skytrain station versus a bus stop<sup>11</sup>. Thus, a limitation of our analysis was that we did not calculate a separate service area buffer for skytrain stations with distances that are further away in comparison to bus stops. By having both of a service area for both skytrain stations and bus stops that are weighted by proximity to that stop, and performing a weighted linear combination of both, we can produce a more comprehensive analysis. 
 
 #### **Network Dataset**
 
