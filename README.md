@@ -58,7 +58,7 @@ Homeownership rate is traditionally associated with a more stable financial situ
 
 The base calculation is:
 
- Homeownership rate = Homeowners(Homeowners+Renters)
+ Homeownership rate = Homeowners / (Homeowners+Renters)
 
 
 ### **Financial Stress**
