@@ -29,10 +29,12 @@ To accomplish our goal of showing quality of life we first begin by generating t
 
 ### **Quality of Life Index**
 
-The Quality of Life Index is a composite index created using Multi-Criteria Decision Analysis (MCDA) and the Analytic Hierarchy Process (AHP). It integrates the four indices to assess overall quality of life:
-Pairwise comparisons in AHP were used to determine the relative importance of each criterion:
+The Quality of Life Index is a composite index created using the Analytic Hierarchy Process (AHP), a multi-criteria decision analysis (MCDA) method. It integrates our four indices to assess overall quality of life.
+Pairwise comparisons were used to determine the relative importance of each criterion:
 
 ![Image](https://github.com/user-attachments/assets/48ac7357-187f-487b-aee5-0d14ac91bbcf)
+
+From the pairwise comparison, the resulting weights were produced for each indices:
 
 - Living Wage Index: 43.5%
 - Housing Cost Burden Index: 28.6%
